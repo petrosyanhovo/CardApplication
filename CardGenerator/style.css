@@ -1,0 +1,114 @@
+* {
+    border: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Lobster', cursive;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Yanone Kaffeesatz', sans-serif; */
+}
+
+.item {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    font-size: 40px;
+    text-align: center;
+}
+
+/* ========== GRID ========== */
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: [l-side-s]1fr 1fr 1fr [l-side-e] 1fr 1fr 1fr 1fr 1fr 1fr 1fr [r-side-s]  1fr 1fr [r-side-e];
+    grid-template-rows: [h-s] 80px [h-e] 1fr [f-s] 100px [f-e];
+}
+
+.header {
+    grid-column: l-side-s / r-side-e;
+    grid-row: h-s / h-e;
+    line-height: 80px
+}
+
+.left {
+    grid-column: l-side-s / l-side-e;
+    grid-row: h-e / f-s;
+    line-height: 180px;
+}
+
+.main {
+    grid-column: l-side-s / r-side-s;
+    grid-row: h-e / f-s;
+    line-height: 180px;
+}
+
+.instructions {
+    grid-column: r-side-s / r-side-e;
+    grid-row: h-s / f-e;
+    line-height: 180px;
+}
+
+.footer {
+    grid-column: l-side-s / r-side-s;
+    grid-row: f-s / f-e;
+    line-height: 100px;
+}
+
+/* =========== MAIN =========== */
+
+.container .header {
+    display: flex;
+    align-items: center;
+}
+
+.container .header button {
+    height: 40px;
+    border: 2px solid blue;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.container .header button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.container .main {
+    display: flex;
+    flex-wrap: wrap;
+    /* min-height: 100vh; */
+    padding: 0 150px;
+    overflow-y: auto;
+}
+
+/* ///////////////////////// */
+
+.container .main .myCard {
+    /* background-color: red; */
+    border: 1px solid black;
+    width: 45%;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+}
+
+.container .main .myCard .closeCard {
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+}
+
+.container .instructions p{
+    margin: 100px auto;
+    font-size: 14px;
+    color: black;
+    font-weight: 900;
+    line-height: 20px;
+}
